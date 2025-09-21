@@ -1,8 +1,8 @@
 #!/bin/bash
 
-START_TIME=$(date + %s)
+START_TIME=$(date +%s)
 
-END_TIME=$(date + %s)
+END_TIME=$(date +%s)
 
 sleep 10
 
