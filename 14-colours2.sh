@@ -12,8 +12,9 @@ if [ $USERID -ne 0 ]; then
 fi
 
 VALIDATION(){
-    if [ $1 -ne 0 ];then
+    if [ $1 -ne 0 ]; then
         echo -e "installation of $2 is ...$R failed $N"
+        exit 1
     else
         echo -e "installation completed of $2...$G successfull $N"
     fi    
@@ -23,7 +24,7 @@ dnf list installed mysql
 
 if [ $? -ne 0 ]; then
     dnf install mysql -y
-    VALIDATE() $? "mysql"
+    VALIDATION $? "MYSQL"
 else 
     echo -e "required software is already...$G installed $N"
 
@@ -33,7 +34,7 @@ dnf list installed nginx
 
 if [ $? -ne 0 ]; then
     dnf install nginx -y
-    VALIDATE() $? "nginx"
+    VALIDATION $? "Nginx"
 else 
     echo -e "required software is already...$G installed $N"
 
@@ -43,7 +44,7 @@ dnf list installed python3
 
 if [ $? -ne 0 ]; then
     dnf install python3 -y
-    VALIDATE() $? "python3"
+    VALIDATION $? "python3"
 else 
     echo -e "required software is already...$G installed $N"
 
