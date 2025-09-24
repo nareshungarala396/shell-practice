@@ -1,6 +1,6 @@
 #!bin/bash
 
-USERID=$(u -id)
+USERID=$(id -u)
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
@@ -13,9 +13,9 @@ fi
 
 VALIDATION(){
     if [ $1 -ne 0 ];then
-        echo -e "installation of mysql is ...$R failed $N"
+        echo -e "installation of $2 is ...$R failed $N"
     else
-        echo -e "installation completed ...$G successfull $N"
+        echo -e "installation completed of $2...$G successfull $N"
     fi    
 }
 
