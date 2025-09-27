@@ -6,7 +6,7 @@ Y="\e[33m"
 R="\e[0m"
 
 LOGS_FOLDER="/var/log/shell-script"
-SCRIPT_NAME=$(echo "$0 | cut -d "." -f1")
+SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 
 mkdir -p $LOGS_FOLDER
@@ -31,7 +31,7 @@ for package in $@
 do
 
     dnf list installed $package &>>$LOG_FILE
-    if [ $? -ne 0] ; then
+    if [ $? -ne 0 ] ; then
         echo -e "required $package $R not istalled yet $N"
 
         dnf install $package -y &>>$LOG_FILE
