@@ -6,11 +6,11 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-LOGS_FOLDER="/var/log/shell-practice"
+LOGS_FOLDER="/var/log/shell-script"
 SCRIPT_NAME=$( echo $0 | cut -d "." -f1)
-LOGS_FILE="$LOG_FOLDER/$SCRIPT_NAME.log"
+LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 
-mkdir -p $LOG_FOLDER
+mkdir -p $LOGS_FOLDER
 
 if [ $USERID -ne 0 ]; then
     echo -e "please use root Privilages...$R Error $N"
