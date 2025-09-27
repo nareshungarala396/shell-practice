@@ -11,21 +11,21 @@ LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 
 mkdir -p $LOGS_FOLDER
 
-echo "Script started executed at: $(date)" | tee -a $LOG_FILE
+echo "Script started executed at: $(date)" 
 
 
-if [ $USERID -ne 0]; then
+if [ $USERID -ne 0 ]; then
     echo -e "please use $R root user privilages $N"
     exit 1
 fi
 
 VALIDATE(){
     if [ $1 -ne 0 ]; then
-    echo -e "installation of $2 has been $R failed $N" | tee -a $LOG_FILE
+    echo -e "installation of $2 has been $R failed $N" 
     else
-    echo -e "installation of $2 has been $G successfull $N" | tee -a $LOG_FILE
+    echo -e "installation of $2 has been $G successfull $N" 
     if
-    }
+}
 
 for package in $@
 do
