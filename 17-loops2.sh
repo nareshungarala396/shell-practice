@@ -21,10 +21,10 @@ fi
 
 VALIDATE(){
     if [ $1 -ne 0 ]; then
-    echo -e "installation of $2 has been $R failed $N" 
+        echo -e "installation of $2 has been $R failed $N" 
     else
-    echo -e "installation of $2 has been $G successfull $N" 
-    if
+        echo -e "installation of $2 has been $G successfull $N" 
+    fi
 }
 
 for package in $@
